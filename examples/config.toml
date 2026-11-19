@@ -1,0 +1,17 @@
+# ~/.config/agents-md-sync/config.toml
+# One instruction file for every coding agent on this machine.
+
+source = "~/notes/AGENTS.md"
+
+# Tools with a documented location: claude, codex, gemini, opencode.
+tools = ["claude", "codex", "gemini"]
+
+# Any other file that should be a copy.
+targets = ["~/dotfiles/agents/AGENTS.md"]
+
+# Refuse to publish a source outside these sizes. Codex reads 32 KiB at most.
+min_bytes = 200
+max_bytes = 32768
+
+# The source must start with this line, so a wrong file is never published.
+heading = "# Shared instructions"

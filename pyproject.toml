@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agents-md-sync"
+version = "0.1.0"
+description = "Keep one instruction file in sync across coding agents."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+dependencies = []
+
+[project.scripts]
+agents-md-sync = "agents_md_sync.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["agents_md_sync*"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "S"]
+ignore = ["S101"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["S103", "S105", "S106", "S108", "S603", "S607"]
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+
+[dependency-groups]
+dev = ["pytest>=9.1.1", "pytest-cov>=7.1.0", "ruff>=0.17.0"]

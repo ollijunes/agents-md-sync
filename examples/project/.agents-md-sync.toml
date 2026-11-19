@@ -1,0 +1,6 @@
+# .agents-md-sync.toml in a repository root
+# AGENTS.md is the file people edit. The others are copies for tools that
+# read a different name. Paths are relative to this file.
+
+source = "AGENTS.md"
+targets = ["CLAUDE.md", "GEMINI.md", ".github/copilot-instructions.md"]
